@@ -1,3 +1,5 @@
+import './css/Card.css'
+
 function Card(props) {
     return (
         <div className='profile-card'>

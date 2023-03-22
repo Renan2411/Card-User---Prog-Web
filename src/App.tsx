@@ -171,10 +171,10 @@ function App() {
     console.log(users)
 
   return (
-    <div className="App">
+    <div className="App menu-profile">
 
       {users.map(user => (
-         <Card name="renan" user={user}></Card>
+         <Card style="width: 100%;" name="renan" user={user}></Card>
       ))}
       
     </div>
