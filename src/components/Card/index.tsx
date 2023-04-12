@@ -1,6 +1,11 @@
 import './styles.css'
+import Increment from '../Increments'
+import Reaction from '../Reaction'
+import { useState } from 'react'
 
-function Card({user}) {
+function Card({ user }) {
+    const [contador] = useState(0)
+
     return (
         <div className='profile-card'>
             <div className="image">
@@ -37,19 +42,19 @@ function Card({user}) {
                 <button className="button">IMC {user.imc}</button>
             </div>
             <div className="analytics">
-                <div className="data">
-                    <i className="bx bx-heart"></i>
-                    <span className="nu">{user.likes}k</span>
-                </div>
-                <div className="data">
-                    <i className="bx bx-message-rounded"></i>
-                    <span className="nu">{user.messages}k</span>
-                </div>
-                <div className="data">
-                    <i className="bx bx-share"></i>
-                    <span className="nu">{user.shares}k</span>
-                </div>
+                <Reaction
+                    icon={<i className="bx bx-heart"></i>}
+                    counter={user.likes}
+                    ></Reaction>
+                <Reaction 
+                    icon={<i className="bx bx-message-rounded"></i>} 
+                    counter={user.messages}></Reaction>
+                <Reaction 
+                    icon={<i className="bx bx-share"></i>}
+                    counter={user.shares}
+                    ></Reaction>
             </div>
+            <Increment></Increment>
         </div>
     )
 }
